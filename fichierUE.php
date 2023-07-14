@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style/css/style.css">
+    <link rel="stylesheet" href="style/bootstrap/bootstrap.min.css">
 </head>
 <body class="body">
     
-    <div class="container">
+<img src="asset/logo/logoInphb.gif" alt="Logo INPHB">
         <section>
             <div class="form-box">
               <div class="form-vaue">
@@ -46,7 +46,7 @@ if(isset($_POST["semestre"])){
     header("location:trimestre.php");
 }
 ?>
-              </div>
+              
             </div>
           </section>
     </div>
