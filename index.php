@@ -22,7 +22,7 @@
           <h2>IDENTIFICATION</h2>
           <div class="inputbox">
             <label for="nom">Nom</label>
-            <input type="text" name="nomt">
+            <input type="text" name="nom">
           </div>
           <div class="inputbox">
             <label for="prenom">Prenom</label>
@@ -66,16 +66,16 @@
             <input type="text" name="nomParent" >
           </div>
           <div class="inputbox">
-            <label for="prenomparent">Prenom parent</label>
-            <input type="text" name="prenomparent" >
+            <label for="prenomParent">Prenom parent</label>
+            <input type="text" name="prenomParent" >
           </div>
           <div class="inputbox">
-            <label for="contactparent">Contact parent</label>
-            <input type="text" name="contactparent" >
+            <label for="contactParent">Contact parent</label>
+            <input type="text" name="contactParent" >
           </div>
           <div class="inputbox">
-            <label for="emailparent">Email parent</label>
-            <input type="email" name="emailparent" >
+            <label for="emailParent">Email parent</label>
+            <input type="email" name="emailParent" >
           </div>
           <div class="inputbox">
             <label for="adresse">Adresse</label>
@@ -83,9 +83,28 @@
           </div>
           <button name="suivant" class="connexion">Suivant</button>
           <?php
-                  if(isset($_POST["suivant"])){
-                        header("location:releveNote.php");
+          if(isset($_POST["suivant"])){
+            extract($_POST);
+            if(!empty($nom) && !empty($prenom) && !empty($date) && !empty($lieu) && !empty($nationalite) && !empty($prenom) && !empty($contact) && !empty($email) && !empty($etablissement) && !empty($serie) && !empty($nomParent) && !empty($prenomParent) && !empty($contactParent) && !empty($adresse)){       
+                  session_start();
+                  $_SESSION['nom'] =$nom;
+                  $_SESSION['prenom'] =$prenom;
+                  $_SESSION['date'] =$date;
+                  $_SESSION['lieu'] =$lieu;
+                  $_SESSION['nationalite'] =$nationalite;
+                  $_SESSION['contact'] =$contact;
+                  $_SESSION['email'] =$email;
+                  $_SESSION['etablissement'] =$etablissement;
+                  $_SESSION['serie'] =$serie;
+                  $_SESSION['nomParent'] =$nomParent;
+                  $_SESSION['prenomParent'] =$prenomParent;
+                  $_SESSION['contactParent'] =$contactParent;
+                  $_SESSION['emailParent'] =$emailParent;
+                  $_SESSION['adresse'] =$adresse;
+                  
+                  header("location:releveNote.php");
                     }
+                  }
                 ?>
         </form>
       </div>

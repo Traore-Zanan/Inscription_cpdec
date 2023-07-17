@@ -1,3 +1,28 @@
+<?php
+session_start();
+//include "connexionDatabase.php";
+
+
+
+// s'il clique sur s'inscire
+if(isset($_POST["envoyer"])){
+    extract($_POST);
+  //verifier que touts les champs sont renseignés
+    //if(!empty($françaisAA) && !empty($anlgaisAA) && !empty($mathsAA) && !empty($françaisNB) && !empty($anlgaisNB) && !empty($mathsNB) !empty($françaisMGA) && !empty($anlgaisMGA) && !empty($mathsMGA)){
+    
+    //if($MDPEtudiant==$confirmeMDP){
+       // $resq = "INSERT INTO etudiant (nom_etudiant,prenom_etudiant,email_etudiant,MDP_etudiant,sexe,matricule) VALUES('$françaisAA','$anglaisAA','$mathsAA','$françaisNB','$anglaisNB','$mathsNB' '$françaisMGA','$anglaisMGA','$mathsMGA')";
+        //$res = $idcnx->exec($resq);
+       //if($res) { $msg="inscription reuissie";}     
+      //}
+    
+//}
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,47 +43,47 @@
                   <h3>Moyennes annuelles</h3>
                   <div class="row">
                     <div class="inputbox col-3 ">
-                      <label for="français">Français</label>
-                      <input type="text" name="français" >
+                      <label for="françaisAA">Français</label>
+                      <input type="text" name="françaisAA" value="<?php echo $_SESSION['nom']; ?>" >
                     </div>
                     <div class="inputbox col-3">
-                      <label for="anglais">Anglais</label>
-                      <input type="text" name="anglais" >
+                      <label for="anglaisAA">Anglais</label>
+                      <input type="text" name="anglaisAA" value="<?php echo $_SESSION['prenom'];    ?>" >
                     </div>
                     <div class="inputbox col-3">
-                      <label for="maths">Mathématiques</label>
-                      <input type="text" name="maths" >
+                      <label for="mathsAA">Mathématiques</label>
+                      <input type="text" name="mathsAA" value="<?php echo $_SESSION['nationalite'];    ?>">
                     </div>
                   </div>
                   
                   <h3>Notes BAC</h3>
                   <div class="row">
                     <div class="inputbox col-3">
-                      <label for="français">Français</label>
-                      <input type="text" name="français" >
+                      <label for="françaisNB">Français</label>
+                      <input type="text" name="françaisNB" >
                     </div>
                     <div class="inputbox col-3">
-                      <label for="anglais">Anglais</label>
-                      <input type="text" name="anglais" >
+                      <label for="anglaisNB">Anglais</label>
+                      <input type="text" name="anglaisNB" >
                     </div>
                     <div class="inputbox col-3">
-                      <label for="maths">Mathématiques</label>
-                      <input type="text" name="maths" >
+                      <label for="mathsNB">Mathématiques</label>
+                      <input type="text" name="mathsNB" >
                     </div>
                   </div>
                   <h3>Moyenne generale annuelle</h3>
                   <div class="row">
                     <div class="inputbox col-3">
-                      <label for="français">Français</label>
-                      <input type="text" name="français" >
+                      <label for="françaisMGA">Français</label>
+                      <input type="text" name="françaisMGA" >
                     </div>
                     <div class="inputbox col-3">
-                      <label for="anglais">Anglais</label>
-                      <input type="text" name="anglais" >
+                      <label for="anglaisMGA">Anglais</label>
+                      <input type="text" name="anglaisMGA" >
                     </div>
                     <div class="inputbox col-3">
-                      <label for="maths">Mathématiques</label>
-                      <input type="text" name="maths" >
+                      <label for="mathsMGA">Mathématiques</label>
+                      <input type="text" name="mathsMGA" >
                     </div>
                   </div>
                   <h2>CHOIX DE VOS UE</h2>
